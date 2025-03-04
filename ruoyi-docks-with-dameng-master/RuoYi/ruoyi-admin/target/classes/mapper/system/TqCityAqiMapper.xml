@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TqCityAqiMapper">
+    
+    <resultMap type="TqCityAqi" id="TqCityAqiResult">
+        <result property="id"    column="id"    />
+<!--        <result property="timepoint"    column="timepoint"    />-->
+        <result property="timepoint" column="timepoint" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+        <result property="colevel"    column="colevel"    />
+        <result property="no2level"    column="no2level"    />
+        <result property="o3level"    column="o3level"    />
+        <result property="pm10level"    column="pm10level"    />
+        <result property="pm25level"    column="pm2_5level"    />
+        <result property="so2level"    column="so2level"    />
+        <result property="area"    column="area"    />
+        <result property="citycode"    column="citycode"    />
+        <result property="co"    column="co"    />
+        <result property="no2"    column="no2"    />
+        <result property="o3"    column="o3"    />
+        <result property="pm10"    column="pm10"    />
+        <result property="pm25"    column="pm2_5"    />
+        <result property="so2"    column="so2"    />
+        <result property="aqi"    column="aqi"    />
+        <result property="primarypollutant"    column="primarypollutant"    />
+        <result property="quality"    column="quality"    />
+        <result property="measure"    column="measure"    />
+        <result property="Unheathful"    column="Unheathful"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="flag"    column="flag"    />
+    </resultMap>
+    <resultMap type="OutputAQILevelNum" id="OutputAQILevelNumResult">
+        <result property="quality"    column="quality"    />
+        <result property="num"    column="num"    />
+        <result property="percentage"    column="percentage"    />
+    </resultMap>
+    <resultMap type="OutputAQIAverage" id="OutputAQIAverageResult">
+        <result property="aqi"    column="aqi"    />
+        <result property="co"    column="co"    />
+        <result property="no2"    column="no2"    />
+        <result property="o3"    column="o3"    />
+        <result property="pm10"    column="pm10"    />
+        <result property="pm2_5"    column="pm2_5"    />
+        <result property="so2"    column="so2"    />
+    </resultMap>
+
+    <resultMap type="OutputProvinceAQIAverage" id="OutputProvinceAQIAverageResult">
+        <result property="provinceId"    column="provinceId"    />
+        <result property="provinceName"    column="provinceName"    />
+        <result property="aqi"    column="aqi"    />
+        <result property="co"    column="co"    />
+        <result property="no2"    column="no2"    />
+        <result property="o3"    column="o3"    />
+        <result property="pm10"    column="pm10"    />
+        <result property="pm2_5"    column="pm2_5"    />
+        <result property="so2"    column="so2"    />
+    </resultMap>
+    <resultMap type="OutputAirLast7" id="OutputAirLast7Result">
+        <result property="nowDay"    column="nowDay"    />
+        <result property="coAverage"    column="coAverage"    />
+        <result property="no2Average"    column="no2Average"    />
+        <result property="o3Average"    column="o3Average"    />
+        <result property="pm10Average"    column="pm10Average"    />
+        <result property="pm2_5Average"    column="pm2_5Average"    />
+        <result property="so2Average"    column="so2Average"    />
+        <result property="aqiAverage"    column="aqiAverage"    />
+    </resultMap>
+    <sql id="selectTqCityAqiVo">
+        select id, timepoint, colevel, no2level, o3level, pm10level, pm2_5level, so2level, area, citycode, co, no2, o3, pm10, pm2_5, so2, aqi, primarypollutant, quality, measure, Unheathful, create_time, create_by, update_time, update_by, flag from ry0.tq_city_aqi
+    </sql>
+
+    <select id="selectTqCityAqiList" parameterType="TqCityAqi" resultMap="TqCityAqiResult">
+        <include refid="selectTqCityAqiVo"/>
+        <where>  
+            <if test="timepoint != null  and timepoint != ''"> and timepoint = #{timepoint}</if>
+            <if test="area != null  and area != ''"> and area = #{area}</if>
+            <if test="citycode != null  and citycode != ''"> and citycode = #{citycode}</if>
+        </where>
+    </select>
+
+    <select id="selectTqCityList" parameterType="String" resultMap="TqCityAqiResult">
+        <include refid="selectTqCityAqiVo"/>
+        where citycode=#{citycode} and timepoint = #{time}
+    </select>
+
+    <select id="selectTqCityAqiById" parameterType="String" resultMap="TqCityAqiResult">
+        <include refid="selectTqCityAqiVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTqCityAqi" parameterType="TqCityAqi">
+        insert into ry0.tq_city_aqi
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="timepoint != null">timepoint,</if>
+            <if test="colevel != null">colevel,</if>
+            <if test="no2level != null">no2level,</if>
+            <if test="o3level != null">o3level,</if>
+            <if test="pm10level != null">pm10level,</if>
+            <if test="pm25level != null">pm2_5level,</if>
+            <if test="so2level != null">so2level,</if>
+            <if test="area != null">area,</if>
+            <if test="citycode != null">citycode,</if>
+            <if test="co != null">co,</if>
+            <if test="no2 != null">no2,</if>
+            <if test="o3 != null">o3,</if>
+            <if test="pm10 != null">pm10,</if>
+            <if test="pm25 != null">pm2_5,</if>
+            <if test="so2 != null">so2,</if>
+            <if test="aqi != null">aqi,</if>
+            <if test="primarypollutant != null">primarypollutant,</if>
+            <if test="quality != null">quality,</if>
+            <if test="measure != null">measure,</if>
+            <if test="Unheathful != null">Unheathful,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="flag != null">flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="timepoint != null">#{timepoint},</if>
+            <if test="colevel != null">#{colevel},</if>
+            <if test="no2level != null">#{no2level},</if>
+            <if test="o3level != null">#{o3level},</if>
+            <if test="pm10level != null">#{pm10level},</if>
+            <if test="pm25level != null">#{pm25level},</if>
+            <if test="so2level != null">#{so2level},</if>
+            <if test="area != null">#{area},</if>
+            <if test="citycode != null">#{citycode},</if>
+            <if test="co != null">#{co},</if>
+            <if test="no2 != null">#{no2},</if>
+            <if test="o3 != null">#{o3},</if>
+            <if test="pm10 != null">#{pm10},</if>
+            <if test="pm25 != null">#{pm25},</if>
+            <if test="so2 != null">#{so2},</if>
+            <if test="aqi != null">#{aqi},</if>
+            <if test="primarypollutant != null">#{primarypollutant},</if>
+            <if test="quality != null">#{quality},</if>
+            <if test="measure != null">#{measure},</if>
+            <if test="Unheathful != null">#{Unheathful},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="flag != null">#{flag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTqCityAqi" parameterType="TqCityAqi">
+        update ry0.tq_city_aqi
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="timepoint != null">timepoint = #{timepoint},</if>
+            <if test="colevel != null">colevel = #{colevel},</if>
+            <if test="no2level != null">no2level = #{no2level},</if>
+            <if test="o3level != null">o3level = #{o3level},</if>
+            <if test="pm10level != null">pm10level = #{pm10level},</if>
+            <if test="pm25level != null">pm2_5level = #{pm25level},</if>
+            <if test="so2level != null">so2level = #{so2level},</if>
+            <if test="area != null">area = #{area},</if>
+            <if test="citycode != null">citycode = #{citycode},</if>
+            <if test="co != null">co = #{co},</if>
+            <if test="no2 != null">no2 = #{no2},</if>
+            <if test="o3 != null">o3 = #{o3},</if>
+            <if test="pm10 != null">pm10 = #{pm10},</if>
+            <if test="pm25 != null">pm2_5 = #{pm25},</if>
+            <if test="so2 != null">so2 = #{so2},</if>
+            <if test="aqi != null">aqi = #{aqi},</if>
+            <if test="primarypollutant != null">primarypollutant = #{primarypollutant},</if>
+            <if test="quality != null">quality = #{quality},</if>
+            <if test="measure != null">measure = #{measure},</if>
+            <if test="Unheathful != null">Unheathful = #{Unheathful},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="flag != null">flag = #{flag},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTqCityAqiById" parameterType="String">
+        delete from ry0.tq_city_aqi where id = #{id}
+    </delete>
+
+    <delete id="deleteTqCityAqiByIds" parameterType="String">
+        delete from ry0.tq_city_aqi where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+<!--    wsh-->
+    <select id="getCityAQIList" parameterType="InputGetCityAQIList" resultMap="TqCityAqiResult">
+        select * from ry0.tq_city_aqi where timepoint=(SELECT MAX(timepoint) FROM ry0.tq_city_aqi)
+        <if test="code != null "> and citycode = #{code} </if>
+        ORDER BY CAST(${type} AS DECIMAL) ${px}
+
+    </select>
+    <select id="getProvinceAQIList" parameterType="InputGetProvinceAQIList" resultMap="OutputProvinceAQIAverageResult">
+        select  c.province_name AS provinceName,
+        c.province_id AS provinceId,
+        ROUND(AVG(a.aqi) , 2) AS aqi,
+        ROUND(AVG(a.co) , 2) AS co,
+        ROUND(AVG(a.no2) , 2) AS no2,
+        ROUND(AVG(a.o3) , 2) AS o3,
+        ROUND(AVG(a.pm10) , 2) AS pm10,
+        ROUND(AVG(a.pm2_5) , 2) AS pm2_5,
+        ROUND(AVG(a.so2) , 2) AS so2
+        FROM ry0.tq_city_aqi a
+        JOIN ry0.tq_city c ON a.citycode = c.city_code
+        WHERE timepoint=(SELECT MAX(timepoint) FROM ry0.tq_city_aqi)
+        <if test="code != null "> and c.province_id =#{code} </if>
+        GROUP BY c.province_name,c.province_id
+        ORDER BY CAST(${type} AS DECIMAL) ${px}
+    </select>
+    <select id="getCityAQIListByProvince" parameterType="InputGetCityAQIList" resultMap="TqCityAqiResult">
+        select a.timepoint, a.colevel, a.no2level, a.o3level, a.pm10level, a.pm2_5level, a.so2level, a.area, a.citycode, a.co, a.no2, a.o3, a.pm10, a.pm2_5, a.so2, a.aqi, a.primarypollutant, a.quality, a.measure, a.Unheathful
+        from ry0.tq_city_aqi a
+        JOIN ry0.tq_city c ON a.citycode = c.city_code
+        where timepoint=(SELECT MAX(timepoint) FROM ry0.tq_city_aqi)
+        <if test="code != null "> and c.province_id = #{code} </if>
+        ORDER BY CAST(${type} AS DECIMAL)  ${px}
+    </select>
+
+    <select id="queryDateLast7ByCity"  parameterType="String" resultMap="OutputAirLast7Result">
+        SELECT TO_CHAR(timepoint, 'YYYY-MM-DD') AS nowDay,
+        ROUND(AVG(co),2) AS coAverage,
+        ROUND(AVG(no2),2) AS no2Average,
+        ROUND(AVG(o3),2) AS o3Average,
+        ROUND(AVG(pm10),2) AS pm10Average,
+        ROUND(AVG(pm2_5),2) AS pm2_5Average,
+        ROUND(AVG(so2),2) AS so2Average,
+        ROUND(AVG(aqi),2) AS aqiAverage
+        FROM ry0.tq_city_aqi
+        WHERE timepoint >= DATE_SUB(CURRENT_TIMESTAMP, INTERVAL '7' DAY)
+        <if test="id != null "> and citycode = ${id} </if>
+        GROUP BY TO_CHAR(timepoint, 'YYYY-MM-DD')
+        ORDER BY nowDay;
+    </select>
+
+    <select id="queryAQILevelNum"  resultMap="OutputAQILevelNumResult">
+        SELECT
+            quality,
+            COUNT(*) AS num,
+            ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS percentage
+        FROM
+            ry0.tq_city_aqi
+        where timepoint=(SELECT MAX(timepoint) FROM ry0.tq_city_aqi)
+        GROUP BY
+            quality
+    </select>
+    <select id="queryQIAverage"  resultMap="OutputAQIAverageResult">
+        SELECT ROUND(AVG(aqi) , 2) AS aqi,
+               ROUND(AVG(co) , 2) AS co,
+               ROUND(AVG(no2) , 2) AS no2,
+               ROUND(AVG(o3) , 2) AS o3,
+               ROUND(AVG(pm10) , 2) AS pm10,
+               ROUND(AVG(pm2_5) , 2) AS pm2_5,
+               ROUND(AVG(so2) , 2) AS so2
+        FROM ry0.tq_city_aqi  where timepoint=(SELECT MAX(timepoint) FROM ry0.tq_city_aqi)
+    </select>
+    <select id="selectTqCityAqiByCode" parameterType="String" resultMap="TqCityAqiResult">
+        select * from ry0.tq_city_aqi where timepoint=(SELECT MAX(timepoint) FROM ry0.tq_city_aqi)
+                                    and citycode = #{code}
+    </select>
+
+</mapper>

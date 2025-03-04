@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TqProvinceMapper">
+    
+    <resultMap type="TqProvince" id="TqProvinceResult">
+        <result property="id"    column="id"    />
+        <result property="provinceCode"    column="province_code"    />
+        <result property="provinceName"    column="province_name"    />
+        <result property="provinceJc"    column="province_jc"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="flag"    column="flag"    />
+    </resultMap>
+
+    <sql id="selectTqProvinceVo">
+        select id, province_code, province_name, province_jc, create_time, create_by, update_time, update_by, flag from ry0.tq_province
+    </sql>
+
+    <select id="selectTqProvinceList" parameterType="TqProvince" resultMap="TqProvinceResult">
+        <include refid="selectTqProvinceVo"/>
+        <where>  
+            <if test="provinceCode != null  and provinceCode != ''"> and province_code = #{provinceCode}</if>
+            <if test="provinceName != null  and provinceName != ''"> and province_name like concat('%', #{provinceName}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectTqProvinceById" parameterType="String" resultMap="TqProvinceResult">
+        <include refid="selectTqProvinceVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTqProvince" parameterType="TqProvince">
+        insert into ry0.tq_province
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="provinceCode != null">province_code,</if>
+            <if test="provinceName != null">province_name,</if>
+            <if test="provinceJc != null">province_jc,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="flag != null">flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="provinceCode != null">#{provinceCode},</if>
+            <if test="provinceName != null">#{provinceName},</if>
+            <if test="provinceJc != null">#{provinceJc},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="flag != null">#{flag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTqProvince" parameterType="TqProvince">
+        update ry0.tq_province
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="provinceCode != null">province_code = #{provinceCode},</if>
+            <if test="provinceName != null">province_name = #{provinceName},</if>
+            <if test="provinceJc != null">province_jc = #{provinceJc},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="flag != null">flag = #{flag},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTqProvinceById" parameterType="String">
+        delete from ry0.tq_province where id = #{id}
+    </delete>
+
+    <delete id="deleteTqProvinceByIds" parameterType="String">
+        delete from ry0.tq_province where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TqAqiStationMapper">
+    
+    <resultMap type="TqAqiStation" id="TqAqiStationResult">
+        <result property="id"    column="id"    />
+        <result property="timepoint"    column="timepoint"    />
+        <result property="area"    column="area"    />
+        <result property="citycode"    column="citycode"    />
+        <result property="provinceid"    column="provinceid"    />
+        <result property="provincename"    column="provincename"    />
+        <result property="positionname"    column="positionname"    />
+        <result property="stationcode"    column="stationcode"    />
+        <result property="co"    column="co"    />
+        <result property="co24h"    column="co_24h"    />
+        <result property="latitude"    column="latitude"    />
+        <result property="longitude"    column="longitude"    />
+        <result property="measure"    column="measure"    />
+        <result property="no2"    column="no2"    />
+        <result property="no224h"    column="no2_24h"    />
+        <result property="o3"    column="o3"    />
+        <result property="o324h"    column="o3_24h"    />
+        <result property="o38h"    column="o3_8h"    />
+        <result property="pm10"    column="pm10"    />
+        <result property="pm1024h"    column="pm10_24h"    />
+        <result property="pm25"    column="pm2_5"    />
+        <result property="pm2524h"    column="pm2_5_24h"    />
+        <result property="so2"    column="so2"    />
+        <result property="so224h"    column="so2_24h"    />
+        <result property="aqi"    column="aqi"    />
+        <result property="colevel"    column="colevel"    />
+        <result property="no2level"    column="no2level"    />
+        <result property="o3level"    column="o3level"    />
+        <result property="pm10level"    column="pm10level"    />
+        <result property="pm25level"    column="pm2_5level"    />
+        <result property="so2level"    column="so2level"    />
+        <result property="primarypollutant"    column="primarypollutant"    />
+        <result property="quality"    column="quality"    />
+        <result property="unheathful"    column="unheathful"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+
+    <sql id="selectTqAqiStationVo">
+        select id, timepoint, area, citycode, provinceid, provincename, positionname, stationcode, co, co_24h, latitude, longitude, measure, no2, no2_24h, o3, o3_24h, o3_8h, pm10, pm10_24h, pm2_5, pm2_5_24h, so2, so2_24h, aqi, colevel, no2level, o3level, pm10level, pm2_5level, so2level, primarypollutant, quality, unheathful, create_by, create_time from ry0.tq_aqi_station
+    </sql>
+
+    <select id="selectTqAqiStationList" parameterType="TqAqiStation" resultMap="TqAqiStationResult">
+        <include refid="selectTqAqiStationVo"/>
+        <where>  
+            <if test="timepoint != null  and timepoint != ''"> and timepoint = #{timepoint}</if>
+            <if test="area != null  and area != ''"> and area = #{area}</if>
+            <if test="citycode != null  and citycode != ''"> and citycode = #{citycode}</if>
+        </where>
+    </select>
+
+    <select id="selectTqStationList" parameterType="String" resultMap="TqAqiStationResult">
+        <include refid="selectTqAqiStationVo"/>
+        where area = #{area} and timepoint = #{time} and positionname=#{position}
+    </select>
+
+    <select id="selectTqAqiStationById" parameterType="String" resultMap="TqAqiStationResult">
+        <include refid="selectTqAqiStationVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTqAqiStation" parameterType="TqAqiStation">
+        insert into ry0.tq_aqi_station
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="timepoint != null">timepoint,</if>
+            <if test="area != null">area,</if>
+            <if test="citycode != null">citycode,</if>
+            <if test="provinceid != null">provinceid,</if>
+            <if test="provincename != null">provincename,</if>
+            <if test="positionname != null">positionname,</if>
+            <if test="stationcode != null">stationcode,</if>
+            <if test="co != null">co,</if>
+            <if test="co24h != null">co_24h,</if>
+            <if test="latitude != null">latitude,</if>
+            <if test="longitude != null">longitude,</if>
+            <if test="measure != null">measure,</if>
+            <if test="no2 != null">no2,</if>
+            <if test="no224h != null">no2_24h,</if>
+            <if test="o3 != null">o3,</if>
+            <if test="o324h != null">o3_24h,</if>
+            <if test="o38h != null">o3_8h,</if>
+            <if test="pm10 != null">pm10,</if>
+            <if test="pm1024h != null">pm10_24h,</if>
+            <if test="pm25 != null">pm2_5,</if>
+            <if test="pm2524h != null">pm2_5_24h,</if>
+            <if test="so2 != null">so2,</if>
+            <if test="so224h != null">so2_24h,</if>
+            <if test="aqi != null">aqi,</if>
+            <if test="colevel != null">colevel,</if>
+            <if test="no2level != null">no2level,</if>
+            <if test="o3level != null">o3level,</if>
+            <if test="pm10level != null">pm10level,</if>
+            <if test="pm25level != null">pm2_5level,</if>
+            <if test="so2level != null">so2level,</if>
+            <if test="primarypollutant != null">primarypollutant,</if>
+            <if test="quality != null">quality,</if>
+            <if test="unheathful != null">unheathful,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="timepoint != null">#{timepoint},</if>
+            <if test="area != null">#{area},</if>
+            <if test="citycode != null">#{citycode},</if>
+            <if test="provinceid != null">#{provinceid},</if>
+            <if test="provincename != null">#{provincename},</if>
+            <if test="positionname != null">#{positionname},</if>
+            <if test="stationcode != null">#{stationcode},</if>
+            <if test="co != null">#{co},</if>
+            <if test="co24h != null">#{co24h},</if>
+            <if test="latitude != null">#{latitude},</if>
+            <if test="longitude != null">#{longitude},</if>
+            <if test="measure != null">#{measure},</if>
+            <if test="no2 != null">#{no2},</if>
+            <if test="no224h != null">#{no224h},</if>
+            <if test="o3 != null">#{o3},</if>
+            <if test="o324h != null">#{o324h},</if>
+            <if test="o38h != null">#{o38h},</if>
+            <if test="pm10 != null">#{pm10},</if>
+            <if test="pm1024h != null">#{pm1024h},</if>
+            <if test="pm25 != null">#{pm25},</if>
+            <if test="pm2524h != null">#{pm2524h},</if>
+            <if test="so2 != null">#{so2},</if>
+            <if test="so224h != null">#{so224h},</if>
+            <if test="aqi != null">#{aqi},</if>
+            <if test="colevel != null">#{colevel},</if>
+            <if test="no2level != null">#{no2level},</if>
+            <if test="o3level != null">#{o3level},</if>
+            <if test="pm10level != null">#{pm10level},</if>
+            <if test="pm25level != null">#{pm25level},</if>
+            <if test="so2level != null">#{so2level},</if>
+            <if test="primarypollutant != null">#{primarypollutant},</if>
+            <if test="quality != null">#{quality},</if>
+            <if test="unheathful != null">#{unheathful},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTqAqiStation" parameterType="TqAqiStation">
+        update ry0.tq_aqi_station
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="timepoint != null">timepoint = #{timepoint},</if>
+            <if test="area != null">area = #{area},</if>
+            <if test="citycode != null">citycode = #{citycode},</if>
+            <if test="provinceid != null">provinceid = #{provinceid},</if>
+            <if test="provincename != null">provincename = #{provincename},</if>
+            <if test="positionname != null">positionname = #{positionname},</if>
+            <if test="stationcode != null">stationcode = #{stationcode},</if>
+            <if test="co != null">co = #{co},</if>
+            <if test="co24h != null">co_24h = #{co24h},</if>
+            <if test="latitude != null">latitude = #{latitude},</if>
+            <if test="longitude != null">longitude = #{longitude},</if>
+            <if test="measure != null">measure = #{measure},</if>
+            <if test="no2 != null">no2 = #{no2},</if>
+            <if test="no224h != null">no2_24h = #{no224h},</if>
+            <if test="o3 != null">o3 = #{o3},</if>
+            <if test="o324h != null">o3_24h = #{o324h},</if>
+            <if test="o38h != null">o3_8h = #{o38h},</if>
+            <if test="pm10 != null">pm10 = #{pm10},</if>
+            <if test="pm1024h != null">pm10_24h = #{pm1024h},</if>
+            <if test="pm25 != null">pm2_5 = #{pm25},</if>
+            <if test="pm2524h != null">pm2_5_24h = #{pm2524h},</if>
+            <if test="so2 != null">so2 = #{so2},</if>
+            <if test="so224h != null">so2_24h = #{so224h},</if>
+            <if test="aqi != null">aqi = #{aqi},</if>
+            <if test="colevel != null">colevel = #{colevel},</if>
+            <if test="no2level != null">no2level = #{no2level},</if>
+            <if test="o3level != null">o3level = #{o3level},</if>
+            <if test="pm10level != null">pm10level = #{pm10level},</if>
+            <if test="pm25level != null">pm2_5level = #{pm25level},</if>
+            <if test="so2level != null">so2level = #{so2level},</if>
+            <if test="primarypollutant != null">primarypollutant = #{primarypollutant},</if>
+            <if test="quality != null">quality = #{quality},</if>
+            <if test="unheathful != null">unheathful = #{unheathful},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTqAqiStationById" parameterType="String">
+        delete from ry0.tq_aqi_station where id = #{id}
+    </delete>
+
+    <delete id="deleteTqAqiStationByIds" parameterType="String">
+        delete from ry0.tq_aqi_station where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+<!--wsh-->
+    <select id="queryStationAQIByCity" parameterType="String" resultMap="TqAqiStationResult">
+        select  * from ry0.tq_aqi_station  where timepoint=(SELECT MAX(timepoint) FROM ry0.tq_aqi_station)
+        <if test="code!= null "> and citycode =#{code} </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,1167 @@
+dexp V8 
+start dexp: SYSDBA/******@LOCALHOST:5236 DIRECTORY=D:\Project\WeiXin\ruoyi-docks-with-dameng1\RuoYi\sql FILE=imp_exp.dmp SCHEMAS="ry0" TABLESPACE=N DROP=N LOG=exp_2024_03_31_20_19_34.log LOG_WRITE=N dummy=N 
+开始导出模式[ry0].....
+----- 共导出 0 个SEQUENCE ----- 
+----- 共导出 0 个VIEW ----- 
+----- 共导出 0 个TRIGGER ----- 
+----- 共导出 0 个COMMENT VIEW ----- 
+----- 共导出 0 个COMMENT COL ----- 
+----- 共导出 0 个PROCEDURE ----- 
+----- 共导出 0 个OPERATOR ----- 
+----- 共导出 0 个TABLESPACE ----- 
+----- 共导出 0 个SYNONYM ----- 
+----- 共导出 0 个DBLINK ----- 
+----- 共导出 0 个TRIGGER ----- 
+----- 共导出 0 个PACKAGE ----- 
+----- 共导出 0 个PKG_BODY ----- 
+----- 共导出 0 个OBJECT of NO REFER OTHER CLASS ----- 
+----- 共导出 0 个OBJECT of REFER OTHER CLASS ----- 
+----- 共导出 0 个JCLASS ----- 
+----- 共导出 0 个CLASS_BODY ----- 
+----- 共导出 0 个DOMAIN ----- 
+----- 共导出 0 个PARTITION GROUP ----- 
+导出模式下的对象权限...
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_cron_triggers -----
+
+导入/出 qrtz_cron_triggers 注释
+
+导入/出 qrtz_cron_triggers 注释
+
+导入/出 qrtz_cron_triggers 注释
+
+导入/出 qrtz_cron_triggers 注释
+
+导入/出 qrtz_cron_triggers 注释
+
+导入/出 qrtz_cron_triggers 注释
+
+导出约束：qrtz_cron_triggers_ibfk_1 
+
+导出表对象权限...
+
+表qrtz_cron_triggers导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_fired_triggers -----
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导入/出 qrtz_fired_triggers 注释
+
+导出表对象权限...
+
+表qrtz_fired_triggers导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_triggers -----
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导入/出 qrtz_triggers 注释
+
+导出索引：sched_name 
+
+导出约束：qrtz_triggers_ibfk_1 
+
+导出表对象权限...
+
+表qrtz_triggers导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_blob_triggers -----
+
+导入/出 qrtz_blob_triggers 注释
+
+导入/出 qrtz_blob_triggers 注释
+
+导入/出 qrtz_blob_triggers 注释
+
+导入/出 qrtz_blob_triggers 注释
+
+导入/出 qrtz_blob_triggers 注释
+
+导出约束：qrtz_blob_triggers_ibfk_1 
+
+导出表对象权限...
+
+表qrtz_blob_triggers导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_scheduler_state -----
+
+导入/出 qrtz_scheduler_state 注释
+
+导入/出 qrtz_scheduler_state 注释
+
+导入/出 qrtz_scheduler_state 注释
+
+导入/出 qrtz_scheduler_state 注释
+
+导入/出 qrtz_scheduler_state 注释
+
+导出表对象权限...
+
+表qrtz_scheduler_state导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_simple_triggers -----
+
+导入/出 qrtz_simple_triggers 注释
+
+导入/出 qrtz_simple_triggers 注释
+
+导入/出 qrtz_simple_triggers 注释
+
+导入/出 qrtz_simple_triggers 注释
+
+导入/出 qrtz_simple_triggers 注释
+
+导入/出 qrtz_simple_triggers 注释
+
+导入/出 qrtz_simple_triggers 注释
+
+导出约束：qrtz_simple_triggers_ibfk_1 
+
+导出表对象权限...
+
+表qrtz_simple_triggers导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_simprop_triggers -----
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导入/出 qrtz_simprop_triggers 注释
+
+导出约束：qrtz_simprop_triggers_ibfk_1 
+
+导出表对象权限...
+
+表qrtz_simprop_triggers导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_calendars -----
+
+导入/出 qrtz_calendars 注释
+
+导入/出 qrtz_calendars 注释
+
+导入/出 qrtz_calendars 注释
+
+导入/出 qrtz_calendars 注释
+
+导出表对象权限...
+
+表qrtz_calendars导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_locks -----
+
+导入/出 qrtz_locks 注释
+
+导入/出 qrtz_locks 注释
+
+导入/出 qrtz_locks 注释
+
+导出表对象权限...
+
+表qrtz_locks导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_paused_trigger_grps -----
+
+导入/出 qrtz_paused_trigger_grps 注释
+
+导入/出 qrtz_paused_trigger_grps 注释
+
+导入/出 qrtz_paused_trigger_grps 注释
+
+导出表对象权限...
+
+表qrtz_paused_trigger_grps导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：qrtz_job_details -----
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导入/出 qrtz_job_details 注释
+
+导出表对象权限...
+
+表qrtz_job_details导出结束，共导出 0 行数据, 大小 0 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_dict_data -----
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导入/出 sys_dict_data 注释
+
+导出表对象权限...
+
+表sys_dict_data导出结束，共导出 29 行数据, 大小 2.430 KB
+
+
+----- [2024-03-31 20:20:16]导出表：gen_table_column -----
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导入/出 gen_table_column 注释
+
+导出表对象权限...
+
+表gen_table_column导出结束，共导出 93 行数据, 大小 11.331 KB
+
+
+----- [2024-03-31 20:20:16]导出表：gen_table -----
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导入/出 gen_table 注释
+
+导出表对象权限...
+
+表gen_table导出结束，共导出 5 行数据, 大小 1.264 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_config -----
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导入/出 sys_config 注释
+
+导出表对象权限...
+
+表sys_config导出结束，共导出 11 行数据, 大小 1.844 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_dict_type -----
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导入/出 sys_dict_type 注释
+
+导出约束：dict_type 
+
+导出表对象权限...
+
+表sys_dict_type导出结束，共导出 10 行数据, 大小 0.735 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_dept -----
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导入/出 sys_dept 注释
+
+导出表对象权限...
+
+表sys_dept导出结束，共导出 10 行数据, 大小 0.953 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_post -----
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导入/出 sys_post 注释
+
+导出表对象权限...
+
+表sys_post导出结束，共导出 4 行数据, 大小 0.212 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_job -----
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导入/出 sys_job 注释
+
+导出表对象权限...
+
+表sys_job导出结束，共导出 3 行数据, 大小 0.349 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_job_log -----
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导入/出 sys_job_log 注释
+
+导出表对象权限...
+
+表sys_job_log导出结束，共导出 1 行数据, 大小 0.125 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_role -----
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导入/出 sys_role 注释
+
+导出表对象权限...
+
+表sys_role导出结束，共导出 3 行数据, 大小 0.206 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_role_dept -----
+
+导入/出 sys_role_dept 注释
+
+导入/出 sys_role_dept 注释
+
+导入/出 sys_role_dept 注释
+
+导出表对象权限...
+
+表sys_role_dept导出结束，共导出 3 行数据, 大小 0.023 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_menu -----
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导入/出 sys_menu 注释
+
+导出表对象权限...
+
+表sys_menu导出结束，共导出 116 行数据, 大小 11.431 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_role_menu -----
+
+导入/出 sys_role_menu 注释
+
+导入/出 sys_role_menu 注释
+
+导入/出 sys_role_menu 注释
+
+导出表对象权限...
+
+表sys_role_menu导出结束，共导出 136 行数据, 大小 1.156 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_oper_log -----
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导入/出 sys_oper_log 注释
+
+导出索引：idx_sys_oper_log_ot 
+
+导出索引：idx_sys_oper_log_s 
+
+导出索引：idx_sys_oper_log_bt 
+
+导出表对象权限...
+
+表sys_oper_log导出结束，共导出 71 行数据, 大小 21.115 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_notice -----
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导入/出 sys_notice 注释
+
+导出表对象权限...
+
+表sys_notice导出结束，共导出 3 行数据, 大小 2.461 KB
+
+
+----- [2024-03-31 20:20:16]导出表：sys_logininfor -----
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导入/出 sys_logininfor 注释
+
+导出索引：idx_sys_logininfor_lt 
+
+导出索引：idx_sys_logininfor_s 
+
+导出表对象权限...
+
+表sys_logininfor导出结束，共导出 65 行数据, 大小 5.362 KB
+
+
+----- [2024-03-31 20:20:18]导出表：sys_user_online -----
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导入/出 sys_user_online 注释
+
+导出表对象权限...
+
+表sys_user_online导出结束，共导出 1 行数据, 大小 0.141 KB
+
+
+----- [2024-03-31 20:20:18]导出表：sys_user -----
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导入/出 sys_user 注释
+
+导出表对象权限...
+
+表sys_user导出结束，共导出 3 行数据, 大小 0.507 KB
+
+
+----- [2024-03-31 20:20:18]导出表：sys_user_role -----
+
+导入/出 sys_user_role 注释
+
+导入/出 sys_user_role 注释
+
+导入/出 sys_user_role 注释
+
+导出表对象权限...
+
+表sys_user_role导出结束，共导出 3 行数据, 大小 0.018 KB
+
+
+----- [2024-03-31 20:20:18]导出表：sys_user_post -----
+
+导入/出 sys_user_post 注释
+
+导入/出 sys_user_post 注释
+
+导入/出 sys_user_post 注释
+
+导出表对象权限...
+
+表sys_user_post导出结束，共导出 2 行数据, 大小 0.012 KB
+
+
+----- [2024-03-31 20:20:18]导出表：tq_aqi_station -----
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导入/出 tq_aqi_station 注释
+
+导出表对象权限...
+
+表tq_aqi_station导出结束，共导出 632 行数据, 大小 198.829 KB
+
+
+----- [2024-03-31 20:20:18]导出表：tq_city -----
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导入/出 tq_city 注释
+
+导出表对象权限...
+
+表tq_city导出结束，共导出 341 行数据, 大小 18.244 KB
+
+
+----- [2024-03-31 20:20:18]导出表：tq_city_aqi -----
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导入/出 tq_city_aqi 注释
+
+导出表对象权限...
+
+表tq_city_aqi导出结束，共导出 4720 行数据, 大小 1.157 MB
+
+
+----- [2024-03-31 20:20:18]导出表：tq_province -----
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导入/出 tq_province 注释
+
+导出表对象权限...
+
+表tq_province导出结束，共导出 34 行数据, 大小 1.175 KB
+
+
+----- [2024-03-31 20:20:18]导出表：tq_city_forecast -----
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导入/出 tq_city_forecast 注释
+
+导出表对象权限...
+
+表tq_city_forecast导出结束，共导出 2387 行数据, 大小 330.544 KB
+模式[ry0]导出结束.....
+成功导出 第1 个SCHEMA ：ry0
+
+共导出 1 个SCHEMA
+
+整个导出过程共花费    2.517 s
+
+成功终止导出, 没有出现警告

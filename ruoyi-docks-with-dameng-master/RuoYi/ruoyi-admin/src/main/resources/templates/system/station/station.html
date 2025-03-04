@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('城市监测点管理列表')" />
+</head>
+<body class="gray-bg">
+     <div class="container-div">
+        <div class="row">
+            <div class="col-sm-12 search-collapse">
+                <form id="formId">
+                    <div class="select-list">
+                        <ul>
+                            <li>
+                                <label>时间点：</label>
+                                <input type="text" name="timepoint"/>
+                            </li>
+                            <li>
+                                <label>城市：</label>
+                                <input type="text" name="area"/>
+                            </li>
+                            <li>
+                                <label>城市编码：</label>
+                                <input type="text" name="citycode"/>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="btn-group-sm" id="toolbar" role="group">
+                <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:station:add">
+                    <i class="fa fa-plus"></i> 添加
+                </a>
+                <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="system:station:edit">
+                    <i class="fa fa-edit"></i> 修改
+                </a>
+                <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" shiro:hasPermission="system:station:remove">
+                    <i class="fa fa-remove"></i> 删除
+                </a>
+                <a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="system:station:export">
+                    <i class="fa fa-download"></i> 导出
+                </a>
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <table id="bootstrap-table"></table>
+            </div>
+        </div>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var editFlag = [[${@permission.hasPermi('system:station:edit')}]];
+        var removeFlag = [[${@permission.hasPermi('system:station:remove')}]];
+        var prefix = ctx + "system/station";
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+                exportUrl: prefix + "/export",
+                modalName: "城市监测点管理",
+                columns: [{
+                    checkbox: true
+                },
+                {
+                    field: 'id',
+                    title: '表id',
+                    visible: false
+                },
+                {
+                    field: 'timepoint',
+                    title: '时间点'
+                },
+                {
+                    field: 'area',
+                    title: '城市'
+                },
+                {
+                    field: 'citycode',
+                    title: '城市编码'
+                },
+                {
+                    field: 'provinceid',
+                    title: '省编码'
+                },
+                {
+                    field: 'provincename',
+                    title: '省名称'
+                },
+                {
+                    field: 'positionname',
+                    title: '监测点名'
+                },
+                {
+                    field: 'stationcode',
+                    title: '监测点编码'
+                },
+                {
+                    field: 'co',
+                    title: 'co'
+                },
+                {
+                    field: 'co24h',
+                    title: '24小时co'
+                },
+                {
+                    field: 'latitude',
+                    title: '纬度'
+                },
+                {
+                    field: 'longitude',
+                    title: '经度'
+                },
+                {
+                    field: 'measure',
+                    title: '建议'
+                },
+                {
+                    field: 'no2',
+                    title: 'no2'
+                },
+                {
+                    field: 'no224h',
+                    title: '24小时no2'
+                },
+                {
+                    field: 'o3',
+                    title: 'o3'
+                },
+                {
+                    field: 'o324h',
+                    title: '24小时o3'
+                },
+                {
+                    field: 'o38h',
+                    title: '8小时o3'
+                },
+                {
+                    field: 'pm10',
+                    title: 'pm10'
+                },
+                {
+                    field: 'pm1024h',
+                    title: '24小时pm10'
+                },
+                {
+                    field: 'pm25',
+                    title: 'pm2.5'
+                },
+                {
+                    field: 'pm2524h',
+                    title: '24小时pm2.5'
+                },
+                {
+                    field: 'so2',
+                    title: 'so2'
+                },
+                {
+                    field: 'so224h',
+                    title: '24小时so2'
+                },
+                {
+                    field: 'aqi',
+                    title: 'aqi'
+                },
+                {
+                    field: 'colevel',
+                    title: 'co等级'
+                },
+                {
+                    field: 'no2level',
+                    title: 'no2等级'
+                },
+                {
+                    field: 'o3level',
+                    title: 'o3等级'
+                },
+                {
+                    field: 'pm10level',
+                    title: 'pm10等级'
+                },
+                {
+                    field: 'pm25level',
+                    title: 'pm2.5等级'
+                },
+                {
+                    field: 'so2level',
+                    title: 'so2等级'
+                },
+                {
+                    field: 'primarypollutant',
+                    title: '主要污染物'
+                },
+                {
+                    field: 'quality',
+                    title: '空气质量'
+                },
+                {
+                    field: 'unheathful',
+                    title: '健康影响'
+                },
+                {
+                    title: '操作',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i>删除</a>');
+                        return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

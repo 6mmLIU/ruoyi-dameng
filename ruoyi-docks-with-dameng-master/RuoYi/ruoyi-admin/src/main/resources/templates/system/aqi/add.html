@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('新增城市空气质量管理')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-aqi-add">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">表ID：</label>
+                <div class="col-sm-8">
+                    <input name="id" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">时间点：</label>
+                <div class="col-sm-8">
+                    <input name="timepoint" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">CO等级：</label>
+                <div class="col-sm-8">
+                    <input name="colevel" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">NO2等级：</label>
+                <div class="col-sm-8">
+                    <input name="no2level" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">O3等级：</label>
+                <div class="col-sm-8">
+                    <input name="o3level" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">PM10等级：</label>
+                <div class="col-sm-8">
+                    <input name="pm10level" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">PM2.5等级：</label>
+                <div class="col-sm-8">
+                    <input name="pm25level" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">SO2等级：</label>
+                <div class="col-sm-8">
+                    <input name="so2level" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">城市名称：</label>
+                <div class="col-sm-8">
+                    <input name="area" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">城市代码：</label>
+                <div class="col-sm-8">
+                    <input name="citycode" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">CO：</label>
+                <div class="col-sm-8">
+                    <input name="co" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">NO2：</label>
+                <div class="col-sm-8">
+                    <input name="no2" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">O3：</label>
+                <div class="col-sm-8">
+                    <input name="o3" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">PM10：</label>
+                <div class="col-sm-8">
+                    <input name="pm10" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">PM2.5：</label>
+                <div class="col-sm-8">
+                    <input name="pm25" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">SO2：</label>
+                <div class="col-sm-8">
+                    <input name="so2" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">AQI：</label>
+                <div class="col-sm-8">
+                    <input name="aqi" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">主要污染物：</label>
+                <div class="col-sm-8">
+                    <input name="primarypollutant" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">空气质量：</label>
+                <div class="col-sm-8">
+                    <input name="quality" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">建议：</label>
+                <div class="col-sm-8">
+                    <input name="measure" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">健康影响：</label>
+                <div class="col-sm-8">
+                    <input name="Unheathful" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">有效标志：</label>
+                <div class="col-sm-8">
+                    <input name="flag" class="form-control" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/aqi"
+        $("#form-aqi-add").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/add", $('#form-aqi-add').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

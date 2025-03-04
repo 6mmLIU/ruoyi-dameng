@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TqCityForecastMapper">
+    
+    <resultMap type="TqCityForecast" id="TqCityForecastResult">
+        <result property="id"    column="id"    />
+        <result property="timepoint"    column="timepoint"    />
+        <result property="citycode"    column="citycode"    />
+        <result property="cityname"    column="cityname"    />
+        <result property="forecastDate"    column="forecastDate"    />
+        <result property="day"    column="day"    />
+        <result property="aqi"    column="aqi"    />
+        <result property="quality"    column="quality"    />
+        <result property="primarypollutant"    column="primarypollutant"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+    </resultMap>
+
+    <sql id="selectTqCityForecastVo">
+        select id, timepoint, citycode, cityname, forecastDate, day, aqi, quality, primarypollutant, create_by, create_time from ry0.tq_city_forecast
+    </sql>
+
+    <select id="selectTqCityForecastList" parameterType="TqCityForecast" resultMap="TqCityForecastResult">
+        <include refid="selectTqCityForecastVo"/>
+        <where>  
+            <if test="timepoint != null  and timepoint != ''"> and timepoint = #{timepoint}</if>
+            <if test="citycode != null  and citycode != ''"> and citycode = #{citycode}</if>
+            <if test="cityname != null  and cityname != ''"> and cityname like concat('%', #{cityname}, '%')</if>
+            <if test="forecastDate != null  and forecastDate != ''"> and forecastDate = #{forecastDate}</if>
+        </where>
+    </select>
+    
+    <select id="selectTqCityForecastById" parameterType="String" resultMap="TqCityForecastResult">
+        <include refid="selectTqCityForecastVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTqCityForecast" parameterType="TqCityForecast">
+        insert into ry0.tq_city_forecast
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="timepoint != null">timepoint,</if>
+            <if test="citycode != null">citycode,</if>
+            <if test="cityname != null">cityname,</if>
+            <if test="forecastDate != null">forecastDate,</if>
+            <if test="day != null">day,</if>
+            <if test="aqi != null">aqi,</if>
+            <if test="quality != null">quality,</if>
+            <if test="primarypollutant != null">primarypollutant,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="timepoint != null">#{timepoint},</if>
+            <if test="citycode != null">#{citycode},</if>
+            <if test="cityname != null">#{cityname},</if>
+            <if test="forecastDate != null">#{forecastDate},</if>
+            <if test="day != null">#{day},</if>
+            <if test="aqi != null">#{aqi},</if>
+            <if test="quality != null">#{quality},</if>
+            <if test="primarypollutant != null">#{primarypollutant},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTqCityForecast" parameterType="TqCityForecast">
+        update ry0.tq_city_forecast
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="timepoint != null">timepoint = #{timepoint},</if>
+            <if test="citycode != null">citycode = #{citycode},</if>
+            <if test="cityname != null">cityname = #{cityname},</if>
+            <if test="forecastDate != null">forecastDate = #{forecastDate},</if>
+            <if test="day != null">day = #{day},</if>
+            <if test="aqi != null">aqi = #{aqi},</if>
+            <if test="quality != null">quality = #{quality},</if>
+            <if test="primarypollutant != null">primarypollutant = #{primarypollutant},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTqCityForecastById" parameterType="String">
+        delete from ry0.tq_city_forecast where id = #{id}
+    </delete>
+
+    <delete id="deleteTqCityForecastByIds" parameterType="String">
+        delete from ry0.tq_city_forecast where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+<!--    wsh-->
+    <select id="queryForecastAQIByCity" parameterType="String" resultMap="TqCityForecastResult">
+        <include refid="selectTqCityForecastVo"/>
+        where citycode = #{code}
+    </select>
+    <delete id="deleteTqCityForecastByCityCode" parameterType="String">
+        delete from  ry0.tq_city_forecast where citycode = #{cityCode}
+    </delete>
+</mapper>

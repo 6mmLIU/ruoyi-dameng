@@ -1,0 +1,8 @@
+dimp V8 
+start dimp: SYSDBA/******@LOCALHOST:5236 DIRECTORY=D:\Project\WeiXin\ruoyi-docks-with-dameng1\RuoYi\sql FILE=imp_exp.dmp SCHEMAS="ry1" IGNORE=N COMPILE=Y INDEXFIRST=N TABLE_FIRST=N COMMIT_ROWS=5000 FAST_LOAD=N LOG=imp_2024_03_31_20_21_03.log LOG_WRITE=N dummy=N 
+本地编码：PG_GBK, 导入文件编码：PG_GB18030
+
+[警告]无效的对象：ry1
+[0/494]整个导入过程共花费    0.002 s
+
+成功终止导入, 但出现警告
